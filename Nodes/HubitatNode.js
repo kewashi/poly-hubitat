@@ -78,7 +78,7 @@ module.exports = function(Polyglot) {
   };
 
   // Required so that the interface can find this Node class using the nodeDefId
-  Hubitat.nodeDefId = nodeDefId;
+  HubitatDimmer.nodeDefId = nodeDefId;
 
   return HubitatDimmer;
 };
