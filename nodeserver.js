@@ -31,16 +31,11 @@ const HubitatDimmer = require('./Nodes/HubitatNode.js')(Polyglot);
 // Names of our customParams
 const accessToken = '';
 const endpt = '';
-const directIP = '192.168.4.6';
-const directPort = '8580';
 
 // UI customParams default values. Param must have at least 1 character
 const defaultParams = {
-  [hubHost]: ' ',
-  [accessToken]: ' ',
-  [endpt]: ' ',
-  [directIP]: ' ',
-  [directPort]: ' '
+  accessToken: ' ',
+  endpt: ' '
 };
 
 logger.info('Starting Node Server');
