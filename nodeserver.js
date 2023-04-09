@@ -34,8 +34,8 @@ const endpt = '';
 
 // UI customParams default values. Param must have at least 1 character
 const defaultParams = {
-  accessToken: ' ',
-  endpt: ' '
+  [accessToken]: 'accessToken',
+  [endpt]: 'endpt'
 };
 
 logger.info('Starting Node Server');
@@ -59,6 +59,8 @@ poly.on('config', function(config) {
   // config.customParams: Configuration parameters from the UI
   // config.newParamsDetected: Flag which tells us that customParams changed
   // config.typedCustomData: Configuration parameters from the UI (if typed)
+
+  config.customParams["access_token"] = "test";
 
   // If this is the first config after a node server restart
   if (config.isInitialConfig) {
