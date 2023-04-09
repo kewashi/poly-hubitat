@@ -26,11 +26,7 @@ const lock = new AsyncLock({ timeout: 500 });
 // Those are the node definitions that our nodeserver uses.
 // You will need to edit those files.
 const ControllerNode = require('./Nodes/ControllerNode.js')(Polyglot);
-const HubitatDimmer = require('./Nodes/HubitatNode.js')(Polyglot);
-
-// Names of our customParams
-const accessToken = '';
-const endpt = '';
+const HubitatDimmer = require('./Nodes/HubitatDimmer.js')(Polyglot);
 
 // UI customParams default values. Param must have at least 1 character
 const defaultParams = {
@@ -59,8 +55,6 @@ poly.on('config', function(config) {
   // config.customParams: Configuration parameters from the UI
   // config.newParamsDetected: Flag which tells us that customParams changed
   // config.typedCustomData: Configuration parameters from the UI (if typed)
-
-  config.customParams["access_token"] = "test";
 
   // If this is the first config after a node server restart
   if (config.isInitialConfig) {

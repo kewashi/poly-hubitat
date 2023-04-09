@@ -15,7 +15,7 @@ module.exports = function(Polyglot) {
 
   // In this example, we also need to have our custom node because we create
   // nodes from this controller. See onCreateNew
-  const HubitatNode = require('./HubitatNode.js')(Polyglot);
+  const HubitatDimmer = require('./HubitatDimmer.js')(Polyglot);
 
   class Controller extends Polyglot.Node {
     // polyInterface: handle to the interface
@@ -64,7 +64,7 @@ module.exports = function(Polyglot) {
         
         if ( key_exists("switch", device.pvalue) ) {
           const address = "HE_" + deviceid;
-          const newDevice = new HubitatNode(that.polyInterface, address, address, device.name, device);
+          const newDevice = new HubitatDimmer(that.polyInterface, address, address, device.name, device);
 
           const result = await that.polyInterface.addNode(newDevice);
 
